@@ -1,8 +1,8 @@
 function C = design_controller(P)
 %DESIGN_CONTROLLER  Builds plant Gp(s) and compensator Gc(s) as polynomials.
 %   No toolbox needed (pure polyval / roots), so turret_controller.m runs in
-%   bare MATLAB or Octave. analysis/plant_and_margins.m does the full
-%   Bode / root-locus analysis with the Control toolbox.
+%   bare MATLAB or Octave. Bode / margin analysis for v4 is to be added
+%   separately (see ../overnight/margins.py, discrete_analysis.py).
 
 % ---- Plant: theta/V = N Kt / ( s [ (J s + b)(L s + R) + N^2 Kt Ke ] ) ----
 % v4: with servo = 'damped' the inner current loop V = V_c - Rv*i adds Rv to the

@@ -136,7 +136,7 @@ The estimator is not the bottleneck. With 0.02° angle noise the cross-range est
 ## 4. What I recommend, in order
 1. **Settle the deadline question** (top of this file).
 2. ~~Run `guardian_v4/v4_check.m`.~~ **Done (15 Nov, Octave 11.3):** A/B/C 10/10 hits at 0.30/0.30/0.31 s, R1 0.16 s, R7 0.19 s, with the same misses, |V| and |i| as the Python prototype. v3 in the same Octave gives its known 8/8 at 0.44 s. At a 5 ms step v4 is also clean (10/10, 0.29–0.30 s). Worth one confirmation run in real MATLAB if you have access.
-3. **Update the figure and analysis scripts for v4.** `make_figures`, `make_bode`, `margins_check` and `plant_and_margins` were copied from v3 unchanged, and some assume the notch. Bode/margins for v4: L(s) = Gc(s)·Gp,Rv(s) with Gp,Rv = N·Kt / ( s[ (J s + b)(L s + R + Rv) + N²·Kt·Ke ] ).
+3. **Write the figure and analysis scripts for v4.** (The stale v3 copies were removed from `guardian_v4/`.) Bode/margins for v4: L(s) = Gc(s)·Gp,Rv(s) with Gp,Rv = N·Kt / ( s[ (J s + b)(L s + R + Rv) + N²·Kt·Ke ] ).
 4. **In the paper:**
    - Show the cancelled-mode problem and the discrete-damping figure. This is the strongest controller-analysis content you have.
    - Present ambush2 as "aim-point prediction at tp, refined with a shrinking horizon, synchronised to t_recharge".

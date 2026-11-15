@@ -70,7 +70,7 @@ Changes 1–2 are fire-control logic only and leave Gc(s) alone. Changes 3–4 c
 3. ~~Untested port.~~ **Resolved 15 Nov.** `v4_check.m` in GNU Octave 11.3 reproduces the Python prototype exactly: A/B/C 10/10 at 0.30/0.30/0.31 s, R1 0.16 s, R7 0.19 s, same misses, peak V and peak I. v3 in the same Octave gives its known 8/8 at 0.44 s.
    - With the whole simulation stepped at 40 ms, both versions turn erratic: one radar sample lines up with a controller call only every 200 ms. v4 has an unlucky B (first hit 7.8 s against v3's 3.8 s) but is better on A and C. Even v4's code run with all v3 settings switches between 3.8 and 7.8 s on small changes, so this is timing luck, not a v4 defect.
    - If you can, do one confirmation run in real MATLAB.
-4. **Figure and analysis scripts** (`make_bode`, `margins_check`, `plant_and_margins`, `make_figures`) in `guardian_v4/` are still the v3 versions and assume the notch. They must be updated before any v4 figures go into the paper.
+4. **Figure and analysis scripts.** The stale v3 copies were removed from `guardian_v4/`; v4 Bode, margin and figure scripts are still to be written (with the paper).
 
 **Within scope: v4 is the better design. Whether it is the better submission depends on 3 and 4.**
 
@@ -151,7 +151,7 @@ Each cell gives targets hit / mean first hit / shots that hit. As a sanity check
 ## 5. Recommendation
 
 1. ~~Run `guardian_v4/v4_check.m`.~~ **Done in Octave 11.3: exact match.**
-2. **Submit v4.** Update `make_bode` and `margins_check` to use L(s) = Gc(s)·Gp,Rv(s), with Gp,Rv = N·Kt / ( s[(J s + b)(L s + R + Rv) + N²·Kt·Ke] ). Present the damped-mode finding as the centrepiece of the controller-analysis section.
+2. **Submit v4.** Write the v4 Bode/margin analysis with L(s) = Gc(s)·Gp,Rv(s), with Gp,Rv = N·Kt / ( s[(J s + b)(L s + R + Rv) + N²·Kt·Ke] ). Present the damped-mode finding as the centrepiece of the controller-analysis section.
 3. **If there's no time to redo the Bode and margin work, submit v3.5** (§6), which keeps v3's analysis valid.
 4. **In the paper's practical-considerations section,** use the realistic-world table (§3.1). Suggested sentence: *"On today's hardware (650 V, 0.1° radar, 50 ms latency) the unmodified design hits only 63 % of targets; with latency compensation, matched noise, anti-windup and a probability-of-hit gate it hits 100 %, with a first hit at 2.0 s and 80 % of shots on target."*
 

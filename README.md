@@ -11,9 +11,9 @@ A laser turret must hit a manoeuvring drone 800–2000 m away. It uses a noisy 2
 
 | Folder | What it is |
 |---|---|
-| **[`guardian_v4/`](guardian_v4/)** | **FINAL submission code** (MATLAB/Octave). Verified in GNU Octave 11.3: `v4_check.m` reproduces the Python prototype exactly. ⚠️ Read [`guardian_v4/WARNING_ANALYSIS_SCRIPTS.md`](guardian_v4/WARNING_ANALYSIS_SCRIPTS.md): its Bode, margin and figure scripts are still the v3 versions. |
+| **[`guardian_v4/`](guardian_v4/)** | **FINAL submission code** (MATLAB/Octave). Verified in GNU Octave 11.3: `v4_check.m` reproduces the Python prototype exactly. Bode, margin and figure scripts for v4 will be added with the paper. |
 | [`overnight/`](overnight/) | Python analysis: a simulator that reproduces v3 exactly, plus every option tested, 400 hard test cases, experiments, logs and figures. Start with [`REPORT.md`](overnight/REPORT.md) (what changed in v4 and why) and [`COMPARISON_v3_v4.md`](overnight/COMPARISON_v3_v4.md) (v3 vs v4, in the brief's world and on realistic hardware). |
-| [`paper/`](paper/) | IEEE paper (`main.tex`, currently an outline). |
+| [`paper/`](paper/) | IEEE paper (`main.tex` is an outline for now; the paper will be added later). |
 | [`archive/`](archive/) | Earlier versions, kept for history: `v1/`, `guardian_v2/`, `guardian_v3/` (previous final candidate: audit, realism study and ideas), plus `notes/` (old hand-off notes). |
 
 ## Run it
