@@ -1,0 +1,11 @@
+# regenerated automatically / large
+overnight/case_cache/
+__pycache__/
+*.pyc
+*.tmp*
+# archives and local hand-off material
+*.zip
+Claude outputs/
+# Octave/MATLAB clutter
+octave-workspace
+*.asv

@@ -1,0 +1,60 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb,graphicx,booktabs,cite}
+\begin{document}
+\title{Covariance-Gated Predictive Fire Control for a Laser Turret Engaging a Maneuvering Aerial Target}
+\author{\IEEEauthorblockN{Venky (and team)}\IEEEauthorblockA{Dept. of Mechanical Engineering, IIT Bombay\\ Code: \texttt{https://github.com/<user>/me319-guardian}}}
+\maketitle
+
+\begin{abstract}
+% 120-150 words: problem, EKF-CA estimator, tp=0.5 s prediction, notch-PI-lead Gc(s), gated firing, key results (hit rate, intercept time, Monte-Carlo).
+\end{abstract}
+
+\section{Introduction}
+% Problem, objectives, assumptions (planar, balanced trunnion, no voltage limit, negligible beam time-of-flight), contribution list.
+
+\section{System Architecture and Design}
+% Fig: engineering schematic (turret, radar, LOS, predicted point).
+% Fig: closed-loop block diagram: radar -> EKF -> predictor -> theta_ref -> Gc -> Gp; feedforward path; fire gate.
+% Interpretation of tp (aim-point vs tracking) and justification.
+
+\section{Mathematical Modeling}
+\subsection{Turret Elevation Plant}
+Reflecting the rotor inertia through the $N{:}1$ gearbox, $J_{eq}=J_t+N^2J_m=3200$~kg\,m$^2$,
+\begin{align}
+J_{eq}\ddot\theta + b\dot\theta &= N K_t i, \\
+L_m \dot i + R_m i &= V_m - N K_e \dot\theta,
+\end{align}
+\begin{equation}
+G_p(s)=\frac{\Theta(s)}{V_m(s)}=\frac{NK_t}{s\left[(J_{eq}s+b)(L_ms+R_m)+N^2K_tK_e\right]}
+=\frac{3.125}{s\,(s^2+10.47s+3129.7)}.
+\end{equation}
+% poles 0, -5.23 +/- 55.70j (wn=55.9 rad/s, zeta=0.094); interpretation.
+\subsection{Target Estimation Model}
+% CA state x=[p_x p_y v_x v_y a_x a_y]^T, white-jerk process noise q, polar measurement h(x), EKF.
+\subsection{Prediction and Elevation Reference}
+% x(t+tp)=F(tp)x, theta_ref = atan2, LOS rate/accel expressions.
+\subsection{Closed-Loop Model}
+
+\section{Controller Design and Analysis}
+% P-only gain ceiling; notch + PI + lead; Bode, margins, root locus; Ka; noise -> turret jitter; blackout covariance growth; feedforward.
+
+\section{Simulation and Results}
+% Table: scenario A/B/C -- first hit time, hits/shots, mean miss, rms perpendicular error, est. rms.
+% Figs: target & estimate, theta vs theta_ref, perpendicular miss vs time with shots, blackout zoom.
+% Monte-Carlo R1..R100 summary.
+
+\section{Final Evaluation}
+% Instructor cases: table + interpretation.
+
+\section{Conclusions}
+
+\bibliographystyle{IEEEtran}
+% \bibliography{refs}
+
+\clearpage
+\appendices
+\section{Use of AI and Computational Tools}
+% Tools: Claude (Anthropic) for ..., MATLAB/Octave for ...
+% Accepted / modified / rejected outputs (log as you go!).
+% Validation reasoning.
+\end{document}
