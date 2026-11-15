@@ -1,8 +1,10 @@
 # regenerated automatically / large
-overnight/case_cache/
+analysis_python/case_cache/
 __pycache__/
 *.pyc
 *.tmp*
+# old local copy of analysis_python/ (folder was locked during the rename)
+overnight/
 # archives and local hand-off material
 *.zip
 Claude outputs/

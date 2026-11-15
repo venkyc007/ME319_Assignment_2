@@ -146,9 +146,9 @@ The estimator is not the bottleneck. With 0.02° angle noise the cross-range est
 5. **Optional:** `lat_comp` if you want a realism paragraph on latency.
 
 ## 5. Files
-- `overnight/gsim.py`: Python port of v3 plus every option tested (defaults reproduce v3 exactly).
-- `overnight/hardset.py`: 400 hard cases in 5 maneuver families (weave, jink, constant-g turns, dives, straight), 0–3 blackouts, elevations −7° to 82°, speeds up to 150 m/s, all inside the brief's envelope.
-- `overnight/exp_*.py`, `*.log`, `results.jsonl`: every experiment and its raw numbers.
-- `overnight/discrete_analysis.py`, `margins.py`: discrete closed-loop poles and continuous margins.
-- `overnight/figs/`: the three figures above (`make_report_figs.py`).
+- `analysis_python/gsim.py`: Python port of v3 plus every option tested (defaults reproduce v3 exactly).
+- `analysis_python/hardset.py`: 400 hard cases in 5 maneuver families (weave, jink, constant-g turns, dives, straight), 0–3 blackouts, elevations −7° to 82°, speeds up to 150 m/s, all inside the brief's envelope.
+- `analysis_python/exp_*.py`, `*.log`, `results.jsonl`: every experiment and its raw numbers.
+- `analysis_python/discrete_analysis.py`, `margins.py`: discrete closed-loop poles and continuous margins.
+- `analysis_python/figs/`: the three figures above (`make_report_figs.py`).
 - `guardian_v4/`: MATLAB port (`turret_controller.m`, `design_controller.m`, `guardian_params.m` changed; `v4_check.m` new). `archive/guardian_v3/` is untouched.

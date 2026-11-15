@@ -53,7 +53,7 @@ P.ref_wf = 15;      % DESIGN: 2-DOF reference shaper bandwidth [rad/s] (0 = off)
 P.ref_amax = 20;    % rad/s^2, shaper acceleration limit
 P.V_max  = inf;     % motor voltage saturation [V] (none specified in brief)
 
-% ---------------- v4 changes (overnight study 15 Nov, see overnight/REPORT) ----------------
+% ---------------- v4 changes (overnight study 15 Nov, see analysis_python/REPORT) ----------------
 P.n_init  = 3;           % v4: 3 radar samples (0.10 s) before firing/aiming (v3: 6)
 P.mode    = 'ambush2';   % v4: aim point placed tp ahead, refined to the SAME absolute aim time each call,
                          %     next aim placed when t+tp reaches recharge completion (1 pulse per second)
